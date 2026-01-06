@@ -1,207 +1,263 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Yohan Media — One Page Animé</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yohan Media — Agence TikTok</title>
 
-<style>
-:root {
-  --bg: #050507;
-  --card: #0d0d12;
-  --muted: #a3a3b2;
-  --accent: #ff0050;
-  --accent-2: #00f2ea;
-  --radius: 14px;
-}
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: 'Poppins', sans-serif; background: var(--bg); color: #e9e9ef; scroll-behavior: smooth; }
-.container { width: 90%; max-width: 1200px; margin: auto; padding: 20px; }
-.site-header { position: sticky; top: 0; background: rgba(0,0,0,0.7); backdrop-filter: blur(6px); display: flex; justify-content: space-between; align-items: center; padding: 10px 0; z-index: 50; }
-.logo { color: var(--accent); font-weight: 800; font-size: 22px; text-decoration: none; }
-.nav a { color: var(--muted); margin-left: 20px; text-decoration: none; padding: 6px 12px; border-radius: 8px; transition: all 0.3s; }
-.nav a:hover { color: #fff; background: linear-gradient(90deg, rgba(255,0,80,0.1), rgba(0,242,234,0.05)); box-shadow: 0 6px 20px rgba(0,0,0,0.5); }
-.burger { display: none; font-size: 24px; background: none; border: none; color: var(--muted); cursor: pointer; }
-.hero { display: grid; grid-template-columns: 1fr 480px; gap: 30px; align-items: center; padding: 80px 0; opacity: 0; transform: translateY(30px); transition: all 1s ease; }
-.hero.visible { opacity: 1; transform: translateY(0); }
-.hero h1 { font-size: 48px; background: linear-gradient(90deg, var(--accent), var(--accent-2)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: gradientMove 5s infinite linear; }
-@keyframes gradientMove { 0% {background-position:0%} 100% {background-position:100%} }
-.hero .tagline { color: var(--accent); font-weight: 600; }
-.hero .intro { color: var(--muted); margin: 15px 0; }
-.btn { padding: 12px 20px; border-radius: 12px; text-decoration: none; font-weight: 600; display: inline-block; transition: all 0.3s; }
-.btn.primary { background: linear-gradient(90deg, var(--accent), var(--accent-2)); color: #050507; }
-.btn.primary:hover { opacity: 0.85; transform: scale(1.05); }
-.hero-media img { width: 100%; border-radius: 16px; box-shadow: 0 30px 80px rgba(0,0,0,0.6); transition: transform 0.5s; }
-.hero-media img:hover { transform: scale(1.05); }
-section { padding: 60px 0; opacity: 0; transform: translateY(30px); transition: all 1s ease; }
-section.visible { opacity: 1; transform: translateY(0); }
-section h2 { font-size: 36px; margin-bottom: 20px; }
-.values, .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; }
-.card { background: rgba(255,255,255,0.02); padding: 20px; border-radius: var(--radius); border: 1px solid rgba(255,255,255,0.03); transition: all 0.5s ease, transform 0.3s; }
-.card:hover { transform: translateY(-6px) scale(1.05); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
-.grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; margin-top: 20px; }
-.media-card { background: var(--card); border-radius: var(--radius); overflow: hidden; border: 1px solid rgba(255,255,255,0.03); opacity:0; transform: translateY(30px); transition: all 0.8s ease; }
-.media-card.visible { opacity:1; transform: translateY(0); }
-.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
-.contact-card { background: var(--card); padding: 18px; border-radius: var(--radius); }
-.contact-card a { color: var(--accent-2); text-decoration: none; }
-.contact-card form label { display: block; margin-bottom: 10px; }
-.contact-card input, .contact-card textarea { width: 100%; padding: 10px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05); background: transparent; color: #e9e9ef; }
-.contact-card button { margin-top: 10px; }
-.site-footer { text-align: center; padding: 20px 0; border-top: 1px solid rgba(255,255,255,0.03); color: var(--muted); }
-@media (max-width: 980px) { .hero { grid-template-columns: 1fr; } .nav { display: none; } .burger { display: block; } .contact-grid { grid-template-columns: 1fr; } }
-@media (max-width: 520px) { .hero h1 { font-size: 32px; } .logo { font-size: 20px; } }
-</style>
-
+    <style>
+        :root{
+          --bg:#050507;
+          --card:#0d0d12;
+          --muted:#a3a3b2;
+          --accent:#ff0050;
+          --accent-2:#00f2ea;
+          --radius:14px;
+        }
+        *{box-sizing:border-box;margin:0;padding:0}
+        body{
+          font-family:Poppins,sans-serif;
+          background:var(--bg);
+          color:#e9e9ef;
+          scroll-behavior:smooth
+        }
+        .container{width:90%;max-width:1200px;margin:auto}
+        header{
+          position:sticky;top:0;z-index:100;
+          background:rgba(0,0,0,.7);
+          backdrop-filter:blur(6px)
+        }
+        .header-inner{
+          display:flex;
+          justify-content:space-between;
+          align-items:center;
+          padding:15px 0
+        }
+        .logo{
+          color:var(--accent);
+          font-weight:800;
+          font-size:22px;
+          text-decoration:none
+        }
+        .nav a{
+          color:var(--muted);
+          margin-left:20px;
+          text-decoration:none;
+          padding:6px 12px;
+          border-radius:8px;
+          transition:.3s
+        }
+        .nav a:hover{
+          color:#fff;
+          background:rgba(255,255,255,.05)
+        }
+        section{padding:80px 0}
+        h1,h2{margin-bottom:20px}
+        .btn{
+          display:inline-block;
+          padding:12px 22px;
+          border-radius:12px;
+          font-weight:600;
+          text-decoration:none;
+          background:linear-gradient(90deg,var(--accent),var(--accent-2));
+          color:#050507
+        }
+        .hero{
+          display:grid;
+          grid-template-columns:1fr 420px;
+          gap:40px;
+          align-items:center
+        }
+        .hero img{
+          width:100%;
+          border-radius:16px;
+          box-shadow:0 30px 80px rgba(0,0,0,.6)
+        }
+        .grid-3{
+          display:grid;
+          grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+          gap:20px
+        }
+        .card,.media-card{
+          background:var(--card);
+          border-radius:var(--radius);
+          border:1px solid rgba(255,255,255,.05);
+          overflow:hidden
+        }
+        .media-content{padding:18px}
+        footer{
+          text-align:center;
+          padding:20px 0;
+          border-top:1px solid rgba(255,255,255,.05);
+          color:var(--muted)
+        }
+        @media(max-width:900px){
+          .hero{grid-template-columns:1fr}
+        }
+    </style>
 </head>
+
 <body>
 
-<header class="site-header">
-<div class="container">
-<a href="#hero" class="logo">Yohan Media</a>
-<nav class="nav">
-<a href="#hero">Accueil</a>
-<a href="#about">À propos</a>
-<a href="#services">Services</a>
-<a href="#portfolio">Portfolio</a>
-<a href="#contact">Contact</a>
-</nav>
-<button class="burger" id="burger">☰</button>
-</div>
+<header>
+    <div class="container header-inner">
+        <a href="#hero" class="logo">Yohan Media</a>
+        <nav class="nav">
+            <a href="#hero">Accueil</a>
+            <a href="#services">Services</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#accounts">Comptes gérés</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </div>
 </header>
 
-<section id="hero" class="hero">
-<div class="container hero-grid">
-<div class="hero-text">
-<h1>Yohan Media</h1>
-<p class="tagline">Contenu viral • Gestion réseaux • Partenariats</p>
-<p class="intro">On transforme vos idées en vidéos qui font vibrer vos audiences.</p>
-<a href="#contact" class="btn primary">Contact & Booking</a>
-</div>
-<div class="hero-media">
-<img src="assets/img-hero.jpg" alt="Yohan Media">
-</div>
-</div>
+<section id="hero">
+    <div class="container hero">
+        <div>
+            <h1>Gestion & montage de contenu TikTok</h1>
+            <p style="color:var(--muted);margin-bottom:20px">
+                J’aide les marques à créer du contenu TikTok efficace grâce au montage,
+                au cadrage et à une mise en valeur optimisée.
+            </p>
+            <a href="#contact" class="btn">Contact & Booking</a>
+        </div>
+        <img src="assets/img-hero.jpg" alt="Yohan Media">
+    </div>
 </section>
 
-<section id="about" class="about">
-<div class="container">
-<h2>À propos de nous</h2>
-<p>Yohan Media est une agence créative spécialisée dans la production de contenu viral, la gestion des réseaux sociaux et les partenariats stratégiques.</p>
-<div class="values">
-<div class="card"><h3>Créativité</h3><p>Des idées originales et mémorables.</p></div>
-<div class="card"><h3>Résultats</h3><p>Contenu mesurable et performant.</p></div>
-<div class="card"><h3>Transparence</h3><p>Communication claire et contrats simples.</p></div>
-</div>
-</div>
+<section id="services">
+    <div class="container">
+        <h2>Services</h2>
+        <div class="grid-3">
+            <div class="card"><div class="media-content">
+                <h3>Montage vidéo</h3>
+                <p>Montage dynamique adapté à TikTok.</p>
+            </div></div>
+            <div class="card"><div class="media-content">
+                <h3>Cadrage & prise de vue</h3>
+                <p>Mise en valeur produit et plans efficaces.</p>
+            </div></div>
+            <div class="card"><div class="media-content">
+                <h3>Optimisation contenu</h3>
+                <p>Format, rythme et cohérence visuelle.</p>
+            </div></div>
+        </div>
+    </div>
 </section>
 
-<section id="services" class="services">
-<div class="container">
-<h2>Nos services</h2>
-<div class="cards">
-<div class="card"><h3>Production vidéo</h3><p>Tournage, montage, motion design et direction artistique.</p></div>
-<div class="card"><h3>Stratégie réseaux</h3><p>Audit, planning éditorial, optimisation des profils.</p></div>
-<div class="card"><h3>Partenariats</h3><p>Collaboration marque/créateurs et campagnes sponsorisées.</p></div>
-<div class="card"><h3>Events & Booking</h3><p>Organisation d’événements et booking d’artistes.</p></div>
-</div>
-</div>
+<section id="portfolio">
+    <div class="container">
+        <h2>Vidéos TikTok réalisées</h2>
+        <div class="grid-3">
+
+            <div class="media-card">
+                <blockquote class="tiktok-embed"
+                            cite="https://www.tiktok.com/@yohan_media_1/video/7517257737802239238"
+                            data-video-id="7517257737802239238">
+                    <section></section>
+                </blockquote>
+                <div class="media-content">
+                    <h3>Contenu restauration</h3>
+                    <p style="color:var(--muted)">Montage & cadrage</p>
+                </div>
+            </div>
+
+            <div class="media-card">
+                <blockquote class="tiktok-embed"
+                            cite="https://www.tiktok.com/@yohan_media_1/video/7552309905571597580"
+                            data-video-id="7552309905571597580">
+                    <section></section>
+                </blockquote>
+                <div class="media-content">
+                    <h3>Vidéo produit</h3>
+                    <p style="color:var(--muted)">Mise en valeur</p>
+                </div>
+            </div>
+
+            <div class="media-card">
+                <blockquote class="tiktok-embed"
+                            cite="https://www.tiktok.com/@yohan_media_1/video/7515919449841552646"
+                            data-video-id="7515919449841552646">
+                    <section></section>
+                </blockquote>
+                <div class="media-content">
+                    <h3>Format viral</h3>
+                    <p style="color:var(--muted)">Montage dynamique</p>
+                </div>
+            </div>
+
+        </div>
+        <script async src="https://www.tiktok.com/embed.js"></script>
+    </div>
 </section>
 
-<section id="portfolio" class="portfolio">
-<div class="container">
-<h2>Portfolio</h2>
-<div class="grid-3 tiktok-grid">
-<div class="media-card tiktok-block">
-<blockquote class="tiktok-embed" cite="https://www.tiktok.com/@yohan_media_1/video/7517257737802239238" data-video-id="7517257737802239238" style="max-width: 100%;"><section></section></blockquote>
-<h3>Vidéo 1</h3>
-</div>
-<div class="media-card tiktok-block">
-<blockquote class="tiktok-embed" cite="https://www.tiktok.com/@yohan_media_1/video/7552309905571597580" data-video-id="7552309905571597580" style="max-width: 100%;"><section></section></blockquote>
-<h3>Vidéo 2</h3>
-</div>
-<div class="media-card tiktok-block">
-<blockquote class="tiktok-embed" cite="https://www.tiktok.com/@yohan_media_1/video/7515919449841552646" data-video-id="7515919449841552646" style="max-width: 100%;"><section></section></blockquote>
-<h3>Vidéo 3</h3>
-</div>
-</div>
-<script async src="https://www.tiktok.com/embed.js"></script>
-</div>
+<section id="accounts">
+    <div class="container">
+        <h2>Comptes TikTok gérés</h2>
+        <p style="color:var(--muted);margin-bottom:30px">
+            Comptes de restauration accompagnés en production de contenu TikTok
+        </p>
+
+        <div class="grid-3">
+
+            <div class="media-card">
+                <div class="media-content">
+                    <h3>@chickennationabj</h3>
+                    <p style="color:var(--muted)">
+                        Montage vidéo • Cadrage • Optimisation des contenus
+                    </p>
+                    <p style="font-size:13px;color:var(--muted)">
+                        Période : Août 2025 – Janvier 2026
+                    </p>
+                    <a href="https://www.tiktok.com/@chickennationabj?lang=fr"
+                       target="_blank"
+                       class="btn">
+                        Voir le compte TikTok
+                    </a>
+                </div>
+            </div>
+
+            <div class="media-card">
+                <div class="media-content">
+                    <h3>@la.maison.du.poulet</h3>
+                    <p style="color:var(--muted)">
+                        Montage vidéo • Cadrage • Mise en valeur produit
+                    </p>
+                    <p style="font-size:13px;color:var(--muted)">
+                        Période : Août 2025 – Janvier 2026
+                    </p>
+                    <a href="https://www.tiktok.com/@la.maison.du.poulet?lang=fr"
+                       target="_blank"
+                       class="btn">
+                        Voir le compte TikTok
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
 </section>
 
-<section id="contact" class="contact">
-<div class="container">
-<h2>Contact & Booking</h2>
-<div class="contact-grid">
-<div class="contact-card">
-<p>Téléphone: <a href="tel:+2250100701007">+225 01 00 70 1007</a></p>
-<p>Email: <a href="mailto:mryohan008@gmail.com">mryohan008@gmail.com</a></p>
-</div>
-<div class="contact-card">
-<form id="contactForm">
-<label>Nom<input type="text" name="name" required></label>
-<label>Email<input type="email" name="email" required></label>
-<label>Message<textarea name="message" rows="5" required></textarea></label>
-<button class="btn primary" type="submit">Envoyer</button>
-</form>
-</div>
-</div>
-</div>
+<section id="contact">
+    <div class="container">
+        <h2>Contact & Booking</h2>
+        <form action="https://formspree.io/f/mrbrglgp" method="POST">
+            <input type="text" name="name" placeholder="Nom" required><br><br>
+            <input type="email" name="email" placeholder="Email" required><br><br>
+            <textarea name="message" rows="5" placeholder="Message" required></textarea><br><br>
+            <button type="submit" class="btn">Envoyer</button>
+        </form>
+    </div>
 </section>
 
-<footer class="site-footer">
-<div class="container">© <span id="year"></span> Yohan Media</div>
+<footer>
+    © <span id="year"></span> Yohan Media
 </footer>
 
 <script>
-// Burger menu
-const burger = document.getElementById('burger');
-const nav = document.querySelector('.nav');
-burger.addEventListener('click', () => { nav.classList.toggle('active'); });
-
-// Smooth scroll
-document.querySelectorAll('.nav a').forEach(link => {
-  link.addEventListener('click', e => {
-    e.preventDefault();
-    document.querySelector(link.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
-  });
-});
-
-// Contact form
-const form = document.getElementById('contactForm');
-form.addEventListener('submit', e => { e.preventDefault(); alert('Merci pour votre message !'); form.reset(); });
-
-// Update year
-document.getElementById('year').textContent = new Date().getFullYear();
-
-// Scroll animations
-const sections = document.querySelectorAll('section, .hero, .media-card');
-window.addEventListener('scroll', () => {
-  sections.forEach(sec => {
-    const rect = sec.getBoundingClientRect();
-    if(rect.top < window.innerHeight - 100) sec.classList.add('visible');
-  });
-});
+    document.getElementById("year").textContent = new Date().getFullYear();
 </script>
 
 </body>
 </html>
-
-<!-- Version complète avec Formspree intégrée -->
-
-<!-- Contact Form Updated -->
-<form id="contactForm"
-  action="https://formspree.io/f/mrbrglgp"
-  method="POST">
-
-  <input type="text" name="name" placeholder="Votre nom" required>
-  <input type="email" name="email" placeholder="Votre email" required>
-  <textarea name="message" rows="5" placeholder="Votre message" required></textarea>
-
-  <input type="hidden" name="_subject" value="Nouveau message — Yohan Media">
-  <input type="hidden" name="_redirect" value="merci.html">
-
-  <button type="submit">Envoyer</button>
-</form>
-<div class="loader" id="loader">Envoi...</div>
-
